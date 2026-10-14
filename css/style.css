@@ -54,6 +54,7 @@ nav ul {
 
 nav li {
   margin-bottom: 0;
+  display: grid;
 }
 
 nav a {

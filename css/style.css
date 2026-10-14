@@ -1,0 +1,301 @@
+/* Client Project Deliverable #2 - Mobile first design (no width media queries) */
+/* Citation: written by me for this class; the skip-to-main-content pattern follows the HW3 skip link
+   and the W3Schools skip link tutorial. Colors (Maize #FFCB05, Blue #00274C) are from the UM Brand Guidelines. */
+
+
+body {
+  font-family: Arial, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background-color: #ffffff;
+}
+
+header {
+  position: relative;
+  padding: 1rem;
+  border-bottom: 0.3rem solid #FFCB05;
+}
+
+.skip {
+  position: absolute;
+  top: -6rem;
+  left: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #FFCB05;
+  color: #00274C;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.skip:focus {
+  top: 0.5rem;
+}
+
+a:focus {
+  outline: 0.25rem solid #00274C;
+  outline-offset: 0.25rem;
+}
+
+.logo {
+  display: block;
+  width: 5rem;
+  height: auto;
+  margin: 0 auto 1rem;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+nav li {
+  margin-bottom: 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #00274C;
+  border: 0.2rem solid #00274C;
+}
+
+nav a:hover {
+  color: #00274C;
+  background-color: #ffffff;
+}
+
+nav a.current {
+  color: #00274C;
+  background-color: #FFCB05;
+  text-decoration: underline;
+  border-bottom: 0.4rem solid #00274C;
+}
+
+h1 {
+  margin: 1rem 0 0;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: #00274C;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: #00274C;
+}
+
+h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: #00274C;
+}
+
+p, ul, ol {
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: #00274C;
+}
+
+main {
+  padding: 1rem;
+}
+
+main section {
+  margin-bottom: 2rem;
+}
+
+main img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  height: 14rem;
+  margin-bottom: 1rem;
+  border: 0;
+}
+
+article {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 0.1rem solid #00274C;
+  border-left: 0.4rem solid #FFCB05;
+}
+
+article > a {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #00274C;
+}
+
+.photo-pair {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.photo-pair img {
+  height: 14rem;
+  margin-bottom: 0;
+  object-fit: cover;
+}
+
+.programs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.programs h2, .programs > p {
+  grid-column: 1 / -1;
+}
+
+.programs article {
+  margin-bottom: 0;
+  padding: 0.75rem;
+  overflow-wrap: break-word;
+}
+
+.programs h3 {
+  font-size: 1.1rem;
+}
+
+.question-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.question-list li {
+  margin-bottom: 0;
+  padding: 0.75rem;
+  background-color: #fff7cc;
+  border: 0.1rem solid #00274C;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.table-scroll:focus {
+  outline: 0.25rem solid #00274C;
+  outline-offset: 0.25rem;
+}
+
+table {
+  width: 100%;
+  min-width: 32rem;
+  border-collapse: collapse;
+}
+
+caption {
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  color: #00274C;
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 0.1rem solid #00274C;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: #ffffff;
+  background-color: #00274C;
+}
+
+aside {
+  margin: 0 1rem 2rem;
+  padding: 1rem;
+  color: #ffffff;
+  background-color: #00274C;
+}
+
+aside h2 {
+  color: #FFCB05;
+}
+
+aside a {
+  color: #FFCB05;
+}
+
+aside div a {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #00274C;
+  background-color: #FFCB05;
+}
+
+aside a:focus {
+  outline-color: #FFCB05;
+}
+
+footer {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #00274C;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+footer address {
+  margin-bottom: 0.5rem;
+  font-style: normal;
+}
+
+footer a {
+  display: inline-block;
+  padding: 0.5rem;
+  color: #FFCB05;
+}
+
+footer a:focus {
+  outline-color: #FFCB05;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

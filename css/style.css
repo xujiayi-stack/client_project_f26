@@ -58,7 +58,9 @@ nav li {
 }
 
 nav a {
-  display: block;
+  display: grid;
+  align-items: center;
+  min-height: 3rem;
   padding: 0.75rem 0.5rem;
   text-align: center;
   font-weight: bold;

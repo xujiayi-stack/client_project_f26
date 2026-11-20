@@ -1,4 +1,6 @@
-/* Client Project Deliverable #2 - Mobile first design (no width media queries) */
+/* Client Project Deliverable #3 - Tablet/Desktop design
+   Mobile first: the rules at the top are the default (mobile) design from Deliverable #2.
+   Tablet (768px) and desktop (1000px) styles are added at the bottom with min-width media queries. */
 /* Citation: written by me for this class; the skip-to-main-content pattern follows the HW3 skip link
    and the W3Schools skip link tutorial. Colors (Maize #FFCB05, Blue #00274C) are from the UM Brand Guidelines. */
 
@@ -54,13 +56,10 @@ nav ul {
 
 nav li {
   margin-bottom: 0;
-  display: grid;
 }
 
 nav a {
-  display: grid;
-  align-items: center;
-  min-height: 3rem;
+  display: block;
   padding: 0.75rem 0.5rem;
   text-align: center;
   font-weight: bold;
@@ -157,6 +156,11 @@ article > a {
   text-decoration: none;
   color: #ffffff;
   background-color: #00274C;
+}
+
+article > a:hover {
+  color: #00274C;
+  background-color: #FFCB05;
 }
 
 .photo-pair {
@@ -295,6 +299,354 @@ footer a {
 
 footer a:focus {
   outline-color: #FFCB05;
+}
+
+/* ---------- New in Deliverable #3: "Find Your Stage" form (mobile default) ---------- */
+
+.finder fieldset {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 0.1rem solid #00274C;
+}
+
+.finder legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+  color: #00274C;
+}
+
+.finder fieldset div {
+  margin-bottom: 0.75rem;
+}
+
+.finder input {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.finder input:focus {
+  outline: 0.25rem solid #00274C;
+  outline-offset: 0.15rem;
+}
+
+.finder label {
+  margin-left: 0.5rem;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #00274C;
+  border: 0.2rem solid #00274C;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #00274C;
+  background-color: #FFCB05;
+}
+
+button:focus {
+  outline: 0.25rem solid #00274C;
+  outline-offset: 0.25rem;
+}
+
+.stage-result {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* =====================================================
+   TABLET: screens 768px and wider
+   ===================================================== */
+@media (min-width: 768px) {
+
+  body {
+    font-size: 1.125rem;
+  }
+
+  /* Header: logo on the left, navigation in one row on the right, title underneath */
+  header {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    column-gap: 2rem;
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
+
+  .logo {
+    width: 6rem;
+    margin: 0;
+  }
+
+  nav ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  h1 {
+    grid-column: 1 / -1;
+    margin-top: 1.5rem;
+    font-size: 2.25rem;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  main {
+    padding: 2rem;
+  }
+
+  main section {
+    margin-bottom: 3rem;
+  }
+
+  /* Larger images and video */
+  iframe {
+    height: 24rem;
+  }
+
+  .photo-pair {
+    gap: 1rem;
+  }
+
+  .photo-pair img {
+    height: 20rem;
+  }
+
+  /* Cards: two columns (prep page, 404 page); the heading and intro stay full width */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .cards h2, .cards > p {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  .cards article {
+    margin-bottom: 0;
+  }
+
+  .cards .wide {
+    grid-column: 1 / -1;
+  }
+
+  /* Home page: the three stage cards sit side by side */
+  .stages {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .programs {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .programs article {
+    padding: 1rem;
+  }
+
+  /* Start page: two sections share a row */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+
+  .split > section:first-child,
+  .split > section:last-child {
+    grid-column: 1 / -1;
+  }
+
+  /* The question cards sit inside a half-width card, so keep them in one column */
+  .question-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Resource lists become a grid of small cards */
+  .resource-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .resource-list li {
+    margin-bottom: 0;
+    padding: 1rem;
+    border: 0.1rem solid #00274C;
+  }
+
+  /* During page: objectives in three columns; table no longer needs to scroll */
+  .objectives {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .objectives li {
+    margin-bottom: 0;
+    padding: 1rem;
+    background-color: #f2f6fa;
+    border-top: 0.4rem solid #FFCB05;
+  }
+
+  table {
+    min-width: 0;
+  }
+
+  /* Newsletter box: text on the left, button on the right */
+  aside {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 2rem;
+    margin: 0 2rem 3rem;
+    padding: 2rem;
+  }
+
+  aside h2,
+  aside p:first-of-type {
+    grid-column: 1;
+  }
+
+  aside div {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    text-align: center;
+  }
+
+  aside div a {
+    margin-bottom: 0;
+  }
+
+  aside p:last-child {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  /* Larger tap targets for the form */
+  .finder fieldset {
+    padding: 1.5rem;
+  }
+}
+
+/* =====================================================
+   DESKTOP: screens 1000px and wider
+   ===================================================== */
+@media (min-width: 1000px) {
+
+  /* Keep the page content from stretching across very wide monitors.
+     max() keeps at least 2rem of space at the edges. */
+  header {
+    padding: 1.5rem max(2rem, calc((100% - 75rem) / 2));
+  }
+
+  main {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  aside {
+    max-width: 71rem;
+    margin: 0 auto 3rem;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+  }
+
+  nav a {
+    padding: 1rem 0.75rem;
+  }
+
+  /* Home page: video beside the welcome text */
+  .welcome {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 2rem;
+    align-items: start;
+  }
+
+  .welcome h2,
+  .welcome p {
+    grid-column: 1;
+  }
+
+  .welcome iframe {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    height: 20rem;
+    margin-bottom: 0;
+  }
+
+  /* Home page: photo beside the list of benefits */
+  .why {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+
+  .why h2,
+  .why > p {
+    grid-column: 1 / -1;
+  }
+
+  .why img {
+    height: 100%;
+    margin-bottom: 0;
+    object-fit: cover;
+  }
+
+  .why ul {
+    margin-bottom: 0;
+  }
+
+  /* Start page: resource cards in three columns */
+  .split .resource-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .photo-pair img {
+    height: 24rem;
+  }
+
+  th, td {
+    padding: 1rem;
+  }
+
+  /* Footer: three columns (left, center, right) */
+  footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 1.5rem max(2rem, calc((100% - 75rem) / 2));
+    text-align: left;
+  }
+
+  footer p,
+  footer address {
+    margin-bottom: 0;
+  }
+
+  footer address {
+    text-align: center;
+  }
+
+  footer p:last-child {
+    text-align: right;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

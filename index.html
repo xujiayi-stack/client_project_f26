@@ -25,7 +25,7 @@
     </header>
 
     <main id="main">
-        <section>
+        <section class="welcome">
             <h2>Build Skills. Work with Partners. Have an Impact.</h2>
             <p>
                 The UMSI Engaged Learning Office connects students with opportunities to apply classroom knowledge to real challenges. Use this site to prepare for your experience, manage your work, and reflect on what you learned.
@@ -35,7 +35,7 @@
             <!-- Note: this iframe might cause an Axe ARIA error - that's not on you that's on YouTube! -->
         </section>
 
-        <section>
+        <section class="why">
             <h2>Why Use This Resource?</h2>
             <p>Real-world projects rarely follow a perfect plan. This site helps you find the right guidance when you need it, so you can spend less time searching for materials and more time learning, collaborating, and moving your project forward.</p>
             <img src="images/umsi-backpack-fall.jpg" alt="A student wears a UMSI backpack in fall on the drag.">
@@ -47,7 +47,32 @@
             </ul>
         </section>
 
-        <section>
+        <!-- Deliverable #3 challenging element: "Find Your Stage" guide (HTML form + JavaScript in js/main.js) -->
+        <section class="finder">
+            <h2>Not Sure Where to Start?</h2>
+            <p>Answer one question and we will point you to the right stage of your engaged learning experience.</p>
+            <form id="stage-form" onsubmit="return findStage()">
+                <fieldset>
+                    <legend>Which best describes where you are right now?</legend>
+                    <div>
+                        <input type="radio" name="stage" id="stage-prep" value="prep">
+                        <label for="stage-prep">I am getting ready and have not met my partner yet.</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="stage" id="stage-start" value="start">
+                        <label for="stage-start">I am about to contact my partner or hold a kickoff meeting.</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="stage" id="stage-during" value="during">
+                        <label for="stage-during">My project is underway and I need help with progress, feedback, or challenges.</label>
+                    </div>
+                </fieldset>
+                <button type="submit">Show me where to go</button>
+            </form>
+            <p id="stage-result" class="stage-result" aria-live="polite"></p>
+        </section>
+
+        <section class="cards stages">
             <h2>Guidance for Every Stage</h2>
             <p>Engaged learning projects can change as new needs, constraints, and insights emerge. Find guidance for the stage of work you are navigating <strong>now.</strong></p>
             <article>
@@ -124,8 +149,9 @@
         <address>
             <a href="mailto:umsi.engagement@umich.edu">umsi.engagement@umich.edu</a>
         </address>
-        <p>&copy; 2026 Regents of the University of Michigan</p>
+        <p>&copy; <span id="year">2026</span> Regents of the University of Michigan</p>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
